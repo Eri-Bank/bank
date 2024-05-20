@@ -81,3 +81,41 @@ let usersList = [
 
 
 
+/*..............................................................*/
+
+
+
+const deposit = document.getElementById('deposit'),
+    depositInput = document.getElementById('depositAmount'),
+    depositBtn = document.getElementById('deposit-btn'),
+    withdraw = document.getElementById('withdraw'),
+    withdrawInput = document.getElementById('withdrawAmount'),
+    withdrawBtn = document.getElementById('withdraw-btn'),
+    balance = document.getElementById('balance');
+
+    depositBtn.addEventListener('click', () => {
+        const value = depositInput.value;
+        const depositValue = Number(deposit.innerText) + Number(value);
+        const balanceValue = Number(balance.innerText) + Number(value);
+        balance.innerText = balanceValue;
+        depositInput.value = '';
+    })
+
+    withdrawBtn.addEventListener('click', () => {
+        const value = withdrawInput.value;
+        if (Number(value) === 0) {
+            alert("You don't have any balance to withdraw");
+        } else if (Number(value) > Number(balance.innerText)) {
+            alert("You don't have that much balance to withdraw");
+        } else {
+            const balanceValue = Number(balance.innerText) - Number(value);
+            const withdrawValue = Number(withdraw.innerText) + Number(value);
+            balance.innerText = balanceValue;
+            withdrawInput.value = '';
+        }
+    })
+    
+
+    
+       
+    
