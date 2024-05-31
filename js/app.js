@@ -1,3 +1,4 @@
+
 let toggleList = document.querySelectorAll('.toggle');
 let actionsContainer = document.querySelector('.account-actions');
 function toggleSection(e){    
@@ -79,12 +80,31 @@ let usersList = [
     }
 ]
 
+let searchBtn = document.querySelector(".btn-find");
+searchBtn.addEventListener("click",function(){
+    accountNumber = document.querySelector("#search").value;
+    accountHolder = usersList.find(user =>user.accounts.has(accountNumber));
+    if(accountNumber){
+       populateAcountHolder(accountHolder)
+       populateAccountSummary(accountHolder.accounts)
+    }
+})
+function populateAcountHolder(holder){
+    document.querySelector("#fullname").innerHTML = `${holder.firstName} ${holder.lastName} `;
+    document.querySelector("#email").innerHTML = `${holder.email} `;
+    document.querySelector("#tel").innerHTML = `${holder.tel} `;
+    document.querySelector("#address").innerHTML = `${holder.address.line1}; ${holder.address.line2}; ${holder.address.postcode} `;
+    
+ }
+function populateAccountSummary(summary){
+    document.querySelector("#account-type").innerHTML = summary.get(accountNumber).type;
+    document.querySelector("#sort-code").innerHTML = summary.get(accountNumber).sortCode;
+    document.querySelector("#account-number").innerHTML = summary.get(accountNumber).accountNumber;
+}
+
 
 
 /*..............................................................*/
-
-
-
 const deposit = document.getElementById('deposit'),
     depositInput = document.getElementById('depositAmount'),
     depositBtn = document.getElementById('deposit-btn'),
@@ -118,4 +138,6 @@ const deposit = document.getElementById('deposit'),
 
     
        
+ 
+   
     
