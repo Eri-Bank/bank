@@ -32,10 +32,10 @@
           </div>
           <div class="logo">
             <img src="images/EriBank.png" alt="Eri Bank Logo" style="width: 150px" />
-            <button class="btn" onclick="openModal('modal-1')">
+            <button id="add-account"class="btn" >
               Add Account
             </button>
-            <button class="btn" onclick="openModal('modal-2')">Add User</button>
+            <button id="add-userbtn" class="btn">Add User</button>
           </div>
           <div class="user-info">
             <h3 class="card-title">Account Holder</h3>
@@ -60,6 +60,7 @@
               type="search"
               name="search"
               id="search"
+              class="src-btn"
               placeholder="Search by account number"
             />
             <button class="btn-find">
@@ -103,8 +104,8 @@
               <div>
                 <label for="source-account">Source Account:</label>
                 <select name="source-account" id="source-account">
-                  <option value="">From</option>
-                  <option value="AC-123">AC-123</option>
+                  <option value="From">From</option>
+                  <option value="AC12345">AC12345</option>
                   <option value="AC-142">AC-142</option>
                   <option value="AC-185">AC-185</option>
                 </select>
@@ -112,19 +113,21 @@
               <div>
                 <label for="destination-account">Target Account:</label>
                 <select name="destination-account" id="destination-account">
-                  <option value="">To</option>
-                  <option value="AC-123">AC-123</option>
+                  <option value="To" selected>To</option>
+                  <option value="AC12345">AC12345</option>
+                  <option value="AC12312">AC12312</option>
                   <option value="AC-142">AC-142</option>
                   <option value="AC-185">AC-185</option>
                 </select>
               </div>
               <div>
                 <label for="amount">Amount: £</label>
-                <input type="number" name="amount" id="amount" /><br />
+                <input type="number" name="amount" id="transfer-amount" /><br />
               </div>
               <div>
-                <button class="btn">Transfer</button>
+                <button class="btn"id="transfer-btn">Transfer</button>
               </div>
+              <span id="alert"></span>
             </fieldset>
           </div>
           <div class="toggle withdraw">
@@ -144,6 +147,7 @@
             </fieldset>
           </div>
         </div>
+        <span id="message"></span>
       </div>
       <div class="account-transactions box">
         <h3 class="card-title">Transactions</h3>
@@ -159,7 +163,44 @@
         </table>
       </div>
     </div>
-
-    <script src="js/app.js"></script>
+    <div id="add-container">
+<div id="add-accnum" >
+  <form action="">
+    <h2>Add Account</h2>
+    <label  for="">id:</label>
+    <input id="add-id"type="text"><br><br>
+    <label  for="">key:</label>
+    <input id="add-key"type="text"><br><br>
+    <label for="">account-type:</label>
+    <input id="add-type" type="text"><br><br>
+    <label for="">account-number:</label>
+    <input id="add-acc"type="text"><br><br>
+    <label for="">balance:</label>
+    <input id="add-balance" type="text"><br><br>
+    <button id="add-accbtn">Add Account</button>
+   
+  </form>
+</div>
+<div id="add-users">
+  <form action="">
+    <h2>Add Users</h2>
+    <label  for="">id:</label>
+    <input id="addid"type="text"><br><br>
+    <label  for="">FIrstName:</label>
+    <input id="add-first"type="text"><br><br>
+    <label  for="">LastName:</label>
+    <input id="add-last"type="text"><br><br>
+    <label for="">Email:</label>
+    <input id="add-email" type="text"><br><br>
+    <label for="">Tel:</label>
+    <input id="add-tel"type="text"><br><br>
+    <label for="">Address:</label>
+    <input id="add-address" type="text"><br><br>
+    <button id="add-userbtn">Add User</button>
+  </form>
+</div>
+<button id="addclose">Close</button>
+</div>
+    <script src="/js/app.js"></script>
   </body>
 </html>

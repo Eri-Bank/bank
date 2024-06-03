@@ -1,4 +1,3 @@
-
 let toggleList = document.querySelectorAll('.toggle');
 let actionsContainer = document.querySelector('.account-actions');
 function toggleSection(e){    
@@ -106,14 +105,10 @@ searchBtn.addEventListener("click",function(){
        document.querySelector("#search").value = "User Not Found";
     }
 })
-let srcfocus = document.querySelector("#search")
-srcfocus.addEventListener("focus",function(){
-    document.querySelector("#search").value = "";
-    balance.innerHTML="";
-    let card = document.querySelectorAll(".card-body span:nth-of-type(even)");
-    card.forEach(x => x.textContent = "");
-    document.querySelector("#source-account option").innerHTML = document.querySelector("#source-account option:first-of-type").value;
-})
+// let inputfocus =  document.querySelector("#search");
+// inputfocus.addEventListener("mouseover",function(){
+//      document.querySelector(".src-btn").value = " " ;
+// })
 function populateAcountHolder(holder){
     document.querySelector("#fullname").innerHTML = `${holder.firstName} ${holder.lastName} `;
     document.querySelector("#email").innerHTML = `${holder.email} `;
@@ -176,11 +171,7 @@ transferBtn.addEventListener("click",function(t) {
     td6.innerHTML = newBalance;
     document.querySelector("#balance").innerHTML = newBalance;
     document.querySelector("#source-account option").innerHTML = document.querySelector("#source-account option:first-of-type").value;
-    document.querySelector("#destination-account option").innerHTML = "To";
-    document.querySelector("#transfer-amount").value = "";
-    alert(`Are You Sure you want to transfer?`)
-    document.querySelector("#alert").style.display = "block" 
-    document.querySelector("#alert").innerHTML = "Succesfully Transfered !"
+    // document.querySelector("#destination-account option").innerHTML = document.querySelector("#destination-account option:first-of-type").attributes.selected
 }else{
     alert("Incorrect Input")
 }
@@ -205,10 +196,7 @@ withdrawBtn.addEventListener("click",function(w) {
    balance.innerHTML = wbalance;
    td6.innerHTML = wbalance;
 })
- let addclose = document.querySelector("#addclose")
- addclose.addEventListener("click",function(){
-    document.querySelector("#add-container").style.display="none";
- })
+ 
 let addpop = document.querySelector("#add-account")
 addpop.addEventListener("click",function(){
     document.querySelector("#add-container").style.display="block";
@@ -266,6 +254,3 @@ let adduser = document.querySelector("#add-users")
 
   
  })
- 
-
-    

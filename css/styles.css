@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+#destination-account option:first-of-type{
+    color: red;
+}
 .container {
     display: flex;
     flex-direction: column;    
@@ -193,3 +195,62 @@ td, th {
 	text-align: left; 
 	font-size: 14px;
 	}
+    #add-users{
+        display: none;
+        padding: 30px;
+        height: 250px;
+        width: 350px;
+        background-color: rgb(152, 175, 241);
+        border: 1px solid gray;
+        margin-top: 30px;
+        border-radius: 15px;
+        position: absolute;
+        right: 15px;
+    }
+    #add-accnum{
+        display: none;
+        padding: 30px;
+        height: 250px;
+        width: 350px;
+        background-color: rgb(152, 175, 241);
+        border: 1px solid gray;
+        margin-top: 30px;
+        border-radius: 15px;
+        position: absolute;
+        left: 15px;
+    }
+    #add-container{
+       display: grid;
+       grid-template-columns: auto auto;
+        width: 900px;
+        height: 400px;
+        margin: auto;
+        margin-bottom: 100px;
+      justify-content: center;
+      gap: 50px;
+      background-color: rgb(219, 238, 237); 
+       border-radius: 15px;
+       display: none;
+       position: relative;
+    }
+    #addclose{
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        position: absolute;
+        bottom: 10px;
+        font-size: 25px;
+        left: 150px;
+        background-color: rgb(203, 214, 246);;
+        
+    }
+    h2{
+        text-align: center;
+        margin-top: -20px;
+    }
+    #alert{
+         margin-left: 30px;
+        color: #3826c5;
+       font-size: 25px;
+       display: none;
+    }
