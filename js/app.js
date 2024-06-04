@@ -87,11 +87,13 @@ let usersList = [
         ])
     }
 ]
+
 let balance = document.querySelector("#balance");
 let accountNumber ;
 let accountHolder ;
 let searchBtn = document.querySelector(".btn-find");
 searchBtn.addEventListener("click",function(){
+    document.querySelector(".account-transactions").style.display="block";
        accountNumber = document.querySelector("#search").value;
        accountHolder = usersList.find(user =>user.accounts.has(accountNumber));
     if(accountHolder && accountNumber != ''){
@@ -107,6 +109,7 @@ searchBtn.addEventListener("click",function(){
     }
 })
 let srcfocus = document.querySelector("#search")
+
 srcfocus.addEventListener("focus",function(){
     document.querySelector("#search").value = "";
     balance.innerHTML="";
@@ -247,7 +250,7 @@ let adduser = document.querySelector("#add-users")
     let accnum = document.querySelector("#add-acc").value;
     let addbalance = document.querySelector("#add-balance").value;
     let key = (document.querySelector("#add-key").value);
-    usersList.push( 
+     usersList.push( 
     {
         'id':id1,
         'firstName' : first,
@@ -263,9 +266,55 @@ let adduser = document.querySelector("#add-users")
     'balance': addbalance
 
 }]])  })
-
-  
+ 
  })
  
+ function saveData(){
+    localStorage.setItem("data",JSON.stringify(usersList));
+    }
+    saveData();
+    let storeddata = JSON.parse(localStorage.getItem("data"));
+if(storeddata){
+   console.log(storeddata)
+}else{
+    alert("not added")
+}
+let allusers = document.querySelector("#all-users");
+allusers.addEventListener("click",populateAllUsers)
+function populateAllUsers(usersList){
+    let userscontainer = document.querySelector("#alluserslist");
 
+    let table = document.createElement("table");
+    let heading = document.createElement("tr");
+    heading.innerHTML = `
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Account Type</th>
+    <th>Account Number</th>
+    <th>Balance</th>
+`
+table.appendChild(heading);
+userscontainer.appendChild(table)
+
+ usersList.forEach(function (customer) {
+    let row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${customer.firstName}</td>
+        <td>${customer.lastName}</td>
+        <td>${customer.email}</td> 
+        <td>${customer.accounts.get(${key}).type}</td>
+        `
+       
+        // <td>${customer.accountNumber}</td>
+        // <td>${customer.balance}</td>
     
+    table.appendChild(row)
+});
+$( document ).ready( populateAllUsers )
+
+}
+populateAllUsers(usersList)
+
+
+
