@@ -222,7 +222,7 @@ adduserpop.addEventListener("click",function(){
     document.querySelector("#add-accnum").style.display = "flex";
     document.querySelector("#add-users").style.display = "flex";
 })  
-let adduser = document.querySelector("#add-users")
+let adduser1 = document.querySelector("#add-users")
  adduser.addEventListener("click",function(){
     let id1 = document.querySelector("#addid").value;
     let first = document.querySelector("#add-first").value;
@@ -253,4 +253,35 @@ let adduser = document.querySelector("#add-users")
 }]])  })
 
   
+ })
+ let adduser = document.querySelector("#add-users")
+ adduser.addEventListener("click",function(){
+    let id1 = document.querySelector("#addid").value;
+    let first = document.querySelector("#add-first").value;
+    let last = document.querySelector("#add-last").value;
+    let email = document.querySelector("#add-email").value; 
+    let tel = document.querySelector("#add-tel").value;
+    let address = document.querySelector("#add-address").value;
+    let id = document.querySelector("#add-id").value;
+    let acctype = document.querySelector("#add-type").value;
+    let accnum = document.querySelector("#add-acc").value;
+    let addbalance = document.querySelector("#add-balance").value;
+    let key = (document.querySelector("#add-key").value);
+     usersList.push( 
+    {
+        'id':id1,
+        'firstName' : first,
+        'lastName' : last,
+        'email' : email,
+        'tel' : tel,
+        'address' : address
+  ,
+    accounts : new Map([[ key, {
+    'id': id,
+    'type': acctype,
+    'accountNumber': accnum,
+    'balance': addbalance
+
+}]])  })
+ 
  })

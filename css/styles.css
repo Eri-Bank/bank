@@ -1,9 +1,7 @@
 *{
+    
     margin: 0;
     padding: 0;
-}
-#destination-account option:first-of-type{
-    color: red;
 }
 .container {
     display: flex;
@@ -224,7 +222,7 @@ td, th {
        display: grid;
        grid-template-columns: auto auto;
         width: 900px;
-        height: 400px;
+        height: 380px;
         margin: auto;
         margin-bottom: 100px;
       justify-content: center;
@@ -233,17 +231,6 @@ td, th {
        border-radius: 15px;
        display: none;
        position: relative;
-    }
-    #addclose{
-        width: 150px;
-        height: 40px;
-        border-radius: 20px;
-        position: absolute;
-        bottom: 10px;
-        font-size: 25px;
-        left: 150px;
-        background-color: rgb(203, 214, 246);;
-        
     }
     h2{
         text-align: center;
@@ -255,3 +242,41 @@ td, th {
        font-size: 25px;
        display: none;
     }
+    #alluserslist{
+        display: none;
+       height: 300px;
+        background-color: rgb(219, 238, 237); 
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    #allUsers-title{
+        background-color: rgb(152, 175, 241);
+        text-align: center; 
+        color: #11608d;
+        font-weight: bold;
+        padding: 5px; 
+    }
+    .th-size{
+       font-size: 18px;
+       padding:5px 30.1px;
+    }
+    #add-accbtn, .add-userbutton{
+        width: 100%;
+        margin: auto;
+        padding: 10px 30px;
+        font-size: 20px;
+    }
+    #add-accbtn{
+        margin-top: 37px;
+    }
+    #add-container input{
+        border: none;
+        background-color: rgb(152, 175, 241);
+        border-bottom: 1px solid gray;
+        width: 200px;
+
+    }
+     #add-container input:focus{
+        outline: none;
+     }
+   
